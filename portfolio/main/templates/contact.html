@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact Page
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+
+{% endblock extrahead %}
+
+{% block content %}
+<p>this is the contact page</p>
+
+<form id="contactForm" method="post">
+    {% csrf_token %}
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" pattern="\+353\s?(\d{1}\s?\d{3}\s?\d{3}|\d{9})" required>
+    {{ form }}
+    <input type="submit" value="Submit">
+    <div id="errorMessage" class="error-message">Please fill out all fields correctly.</div>
+</form>
+
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock content %}
+
+
+

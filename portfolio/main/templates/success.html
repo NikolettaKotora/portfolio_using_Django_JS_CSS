@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Success!
+{% endblock title %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<h1>Success!</h1>
+<p>Your form has been sucessfully filled in and has been sent to me! Thank you for your interest! I will return to you as soon as possible. Until then please have a look around here.</p>
+{% endblock content %}
